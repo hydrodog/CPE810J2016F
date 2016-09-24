@@ -19,6 +19,14 @@ public class User {
 		timestamp = System.currentTimeMillis();
 	}
 	
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String u) {
+		userid = u;
+	}
+	
+	
 	public String toString() {
 		return "user: " + userid + " passwd: " + passwd + " time: " + timestamp;
 	}
