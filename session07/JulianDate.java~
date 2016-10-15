@@ -1,0 +1,22 @@
+public class JulianDate {
+
+
+	public static void main(String[] args) {
+		JulianDate d1 = new JulianDate(2016, 1, 1); // Jan 1. 2016  00:00:00 (midnight)
+		JulianDate d2 = new JulianDate(2016, 1, 2); // Jan 2, 2016
+
+    double d = d1.sub(d2); // should be -1
+
+		JulianDate d3 = new JulianDate(2016, 3, 20, 12, 30, 00); //
+		// hh/24 + min / (24*60) + sec / (24*60*60)
+		// 12 / 24.0 + 30 / (24*60.0) + 00 / (24*60*60.0);
+
+		d1 = JulianDate.now();
+    JulianDate d4 =	d1.add(100);
+
+		System.out.println(d1);
+		System.out.println(d1.getYear() + ": " + d1.getMonth() + ":" + d1.getDay() + "\t" +
+											 d1.getHour() + ":" + d1.getMinute() + ":" + d1.getSecond());
+	}
+
+}
