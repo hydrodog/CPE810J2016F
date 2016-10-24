@@ -1,0 +1,6 @@
+import java.util.*;
+public class c07_properties {
+	public static void main(String[] args) {
+		Properties p = new Properties();
+		p.load("dict.dat");
+	}

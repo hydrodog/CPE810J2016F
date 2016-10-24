@@ -1,36 +1,37 @@
-public class ObjectReview {
+public class ObjectReview2 {
 
 	public static void main(String[] args) {
-		A a1 = new A();
-		System.out.println(a1);
-		B b1 = new B();
-		System.out.println(b1);
+		X x1; // ___________
+		Y y1; // ___________
+		Z z1; // ___________
+		x1 = new X(); // ILLEGAL: ABSTRACT CLASS
+		y1 = new Y(); // LEGAL
+		z1 = new Z();
+		y1.f(); // Y
+		z1.f(); // Z
+		y1.g();
+		y1.h();
+		x1 = y1;
+		x1.f();
+
+		y1 = x1; // ILLEGAL ??  How does this know that x1 is compatible?  Could be pointing to Z
+		y1.g();
 	}
 }
 
-class A {
-  private int x;
-	public A(int x) {
-		this.x = x;
-	}
-	public String toString() {
-		return x + ""; //SimpleDecimalFormat sdf =
-	}
+abstract class X {
+	public void f();
 }
 
-class B extends A {
+class Y extends X {
 	private int y;
-	public B(int x, int y) {
-		//illegal, private		this.x = x;
-		super(x);
-		this.y = y;
-	}
-	public String toString() {
-		return super.toString() + " " +  y;
-	}
+	public void f() { System.out.println("Y"); }
+	public void g() { System.out.println(y); }
 }
 
-
-
-
+class Z extends X {
+	private int z;
+	public void f() { System.out.println("Z"); }
+	public void h() { System.out.println(z); }
+}
 
