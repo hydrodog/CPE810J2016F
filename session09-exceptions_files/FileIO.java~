@@ -1,0 +1,32 @@
+public class FileIO {
+
+	public void f() {
+		BufferedReader br = null;		
+		try {
+			br = new BufferedReader(new FileReader("test.txt"));
+			String line;
+
+			while (  (line = br.readLine()) != null) {
+				System.out.println(line);
+			}
+
+		} catch (IOException e) {
+			
+
+		} finally {
+			try {
+				if (br != null)
+					br.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+
+		
+
+
+	}
+}

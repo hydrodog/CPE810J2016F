@@ -1,0 +1,19 @@
+public class Regex {
+	public static void main(String[] args) {
+		String s = "This is a test 212\\866\\3322";
+		String s2 = "stock IBM price=\"182.76\" and APPL is 176.80"
+
+			//			String regex = file.readLine();
+		//		System.out.println(s.matches("[a-z]+"));
+		Pattern p = Pattern.compile("\\d{3}\\\\\\d{3}\\\\\\(d{4})");
+		Matcher m = p.matcher(s);
+		while (m.find()) {
+			System.out.println(m.start() + "," + m.end());
+			System.out.println(m.start(1) + "," + m.end(1));
+
+
+		}
+
+	}
+
+}
